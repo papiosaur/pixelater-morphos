@@ -4,7 +4,7 @@ TARGET = $(PROJECT_NAME)
 
 # Compilateur et flags
 CXX = ppc-morphos-g++-11
-CXXFLAGS = -noixemul -O2 -Wall -fsigned-char
+CXXFLAGS = -noixemul -O2 -Wall
 LDFLAGS = -noixemul
 
 # Répertoires d'inclusion
@@ -16,11 +16,11 @@ INCLUDES = -Iraylib/src \
            -I/gg/usr/local/include/SDL2
 
 # Flags de compilation supplémentaires
-CXXFLAGS += $(INCLUDES) -pthread -fpermissive -fsigned-char -D__AMIGADATE__=\"17.8.2025\"
+CXXFLAGS += $(INCLUDES) -D__AMIGADATE__=\"17.8.2025\"
 
 # Bibliothèques à lier
 LIBDIRS = -L/gg/usr/local/lib
-LIBS = -lraylib -lSDL2 -lSDL2_mixer -lSDL2_image -lSDL2_ttf -lGL -lstdc++ -pthread -lc -lm
+LIBS = -lraylib -lSDL2 -lGL -lc -lm
 
 # Fichiers sources
 IMGUI_SOURCES = imgui/imgui.cpp \

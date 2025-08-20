@@ -111,7 +111,7 @@
 #else
 #define SDL_HAS_CAPTURE_AND_GLOBAL_MOUSE    0
 #endif
-#define SDL_HAS_VULKAN                      SDL_VERSION_ATLEAST(2,0,6)
+#define SDL_HAS_VULKAN                      SDL_VERSION_ATLEAST(2,0,6) && !defined(__MORPHOS__)
 
 // SDL Data
 struct ImGui_ImplSDL2_Data

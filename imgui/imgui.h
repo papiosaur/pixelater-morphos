@@ -2701,6 +2701,12 @@ IM_MSVC_RUNTIME_CHECKS_RESTORE
 #define IM_COL32_B_SHIFT    0
 #define IM_COL32_A_SHIFT    24
 #define IM_COL32_A_MASK     0xFF000000
+#elif __MORPHOS__
+#define IM_COL32_R_SHIFT    24
+#define IM_COL32_G_SHIFT    16
+#define IM_COL32_B_SHIFT    8
+#define IM_COL32_A_SHIFT    0
+#define IM_COL32_A_MASK     0x000000FF
 #else
 #define IM_COL32_R_SHIFT    0
 #define IM_COL32_G_SHIFT    8
