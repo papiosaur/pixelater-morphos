@@ -4,7 +4,7 @@ TARGET = $(PROJECT_NAME)
 
 # Compilateur et flags
 CXX = ppc-morphos-g++-11
-CXXFLAGS = -noixemul -O2 -Wall
+CXXFLAGS = -noixemul -O2 -Wall -fpermissive -fsigned-char 
 LDFLAGS = -noixemul
 
 # Répertoires d'inclusion
@@ -19,8 +19,7 @@ INCLUDES = -Iraylib/src \
 CXXFLAGS += $(INCLUDES) -D__AMIGADATE__=\"17.8.2025\"
 
 # Bibliothèques à lier
-LIBDIRS = -L/gg/usr/local/lib
-LIBS = -lraylib -lSDL2 -lGL -lc -lm
+LIBS = -Lraylib/src -lraylib -L/gg/usr/local/lib -lSDL2 -lGL -lc -lm
 
 # Fichiers sources
 IMGUI_SOURCES = imgui/imgui.cpp \
@@ -29,8 +28,7 @@ IMGUI_SOURCES = imgui/imgui.cpp \
                 imgui/imgui_tables.cpp \
                 imgui/imgui_widgets.cpp \
                 imgui/backends/imgui_impl_sdl2.cpp \
-                imgui/backends/imgui_impl_opengl2.cpp \
-                imgui/backends/imgui_impl_sdlrenderer2.cpp
+                imgui/backends/imgui_impl_opengl2.cpp
 
 RLIMGUI_SOURCES = rlImGui/rlImGui.cpp
 
