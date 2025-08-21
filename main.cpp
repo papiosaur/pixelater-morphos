@@ -24,7 +24,7 @@ using std::vector, std::string;
 
 #define MAX_OUTPUT_FILE_NAME_SIZE 20
 
-#idfdef __MORPHOS__
+#ifddef __MORPHOS__
 unsigned long __stack = 1024 * 1024;
 #endif
 
